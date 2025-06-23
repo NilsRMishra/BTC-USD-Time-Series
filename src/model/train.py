@@ -18,7 +18,7 @@ class TrainingModel:
 		model = TimeSeriesModel(input_dim=47, model_dim=128, num_layers=2, dim_feedforward=1024)
 		optimizer = torch.optim.Adam(model.parameters(), lr=self.learning_rate)
 		# optimizer.to(device)
-		model.to(device)
+		model.to(self.device)
 		return model, criterion, optimizer
 
 	def train_eval_loop(self, data=None, is_train=False, model=None):
